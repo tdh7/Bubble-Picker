@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="gray">#22000000</color>
+    <color name="nearlyWhite">#44ffffff</color>
+    <color name="flatRed">#FF3B30</color>
+    <color name="flatGreen">#4CD964</color>
+    <color name="flatOrange">#FF9500</color>
+    <color name="flatYellow">#FFCC00</color>
+    <color name="flatTealBlue">#5AC8FA</color>
+    <color name="flatPurple">#5856D6</color>
+    <color name="flatPink">#FF2D55</color>
+    <color name="flatBlue">#007AFF</color>
+</resources>

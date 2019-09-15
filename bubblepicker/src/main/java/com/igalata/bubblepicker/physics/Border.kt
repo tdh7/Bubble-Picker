@@ -26,6 +26,7 @@ class Border(world: World, var position: Vec2, var view: Int) {
                 }
             }
         }
+
     private val fixture: FixtureDef
         get() {
             return FixtureDef().apply {
@@ -33,6 +34,7 @@ class Border(world: World, var position: Vec2, var view: Int) {
                 density = 50f
             }
         }
+
     private val bodyDef: BodyDef
         get() {
             return BodyDef().apply {

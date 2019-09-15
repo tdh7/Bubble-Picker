@@ -17,11 +17,14 @@ import com.igalata.bubblepicker.model.PickerItem
  */
 class BubblePicker : GLSurfaceView {
 
+    // Background variable
     @ColorInt var background: Int = 0
         set(value) {
             field = value
             renderer.backgroundColor = Color(value)
         }
+
+    //
     @Deprecated(level = DeprecationLevel.WARNING,
             message = "Use BubblePickerAdapter for the view setup instead")
     var items: ArrayList<PickerItem>? = null
@@ -29,6 +32,7 @@ class BubblePicker : GLSurfaceView {
             field = value
             renderer.items = value ?: ArrayList()
         }
+
     var adapter: BubblePickerAdapter? = null
         set(value) {
             field = value
@@ -37,20 +41,24 @@ class BubblePicker : GLSurfaceView {
                         .map { value.getItem(it) }.toList())
             }
         }
+
     var maxSelectedCount: Int? = null
         set(value) {
             renderer.maxSelectedCount = value
         }
+
     var listener: BubblePickerListener? = null
         set(value) {
             renderer.listener = value
         }
+
     var bubbleSize = 50
         set(value) {
             if (value in 1..100) {
                 renderer.bubbleSize = value
             }
         }
+
     val selectedItems: List<PickerItem?>
         get() = renderer.selectedItems
 
