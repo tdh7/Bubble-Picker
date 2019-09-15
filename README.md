@@ -1,10 +1,13 @@
 # Bubble-Picker
 
 This is modified version of Bubble-Picker, the original version is located [here](https://github.com/igalata/Bubble-Picker)
-## Preview
-<img src="shot.gif"/>
-## License
 
+## Preview
+
+<img src="shot.gif"/>
+
+## License
+```
 MIT License
 
 Copyright (c) 2019 Trung Dinh Le
@@ -26,3 +29,4 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+```
