@@ -1,6 +1,6 @@
 # Bubble-Picker
 
-This is modified version of Bubble-Picker, the original version is located [here](https://github.com/igalata/Bubble-Picker)
+This is modified version of Android Bubble-Picker Library, the original version is located [here](https://github.com/igalata/Bubble-Picker)
 
 ## Preview
 
