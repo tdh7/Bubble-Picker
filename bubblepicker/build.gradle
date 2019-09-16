@@ -28,11 +28,12 @@ android {
 
 dependencies {
     api fileTree(dir: 'libs', include: ['*.jar'])
-    api "com.android.support:appcompat-v7:$supportLibVersion"
+    api 'androidx.appcompat:appcompat:1.1.0'
     api "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
     compile files('libs/jbox2d-library-2.1.2.2.jar')
     compile files('libs/slf4j-api-1.7.22.jar')
+
 }
 repositories {
     mavenCentral()
