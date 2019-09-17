@@ -1,4 +1,4 @@
-package com.igalata.bubblepicker
+package com.ldt.bubblepicker
 
 /**
  * Created by irinagalata on 3/8/17.

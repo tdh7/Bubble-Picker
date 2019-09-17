@@ -1,16 +1,15 @@
-package com.igalata.bubblepickerdemo
+package com.ldt.bubblepickerdemo
 
 import android.graphics.Typeface
 import android.os.Build
 import android.os.Bundle
-import android.view.TextureView
 import androidx.core.content.ContextCompat
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.Toast
-import com.igalata.bubblepicker.BubblePickerListener
-import com.igalata.bubblepicker.adapter.BubblePickerAdapter
-import com.igalata.bubblepicker.model.BubbleGradient
-import com.igalata.bubblepicker.model.PickerItem
+import com.ldt.bubblepicker.BubblePickerListener
+import com.ldt.bubblepicker.adapter.BubblePickerAdapter
+import com.ldt.bubblepicker.model.BubbleGradient
+import com.ldt.bubblepicker.model.PickerItem
 import kotlinx.android.synthetic.main.activity_demo.*
 
 /**
@@ -43,6 +42,7 @@ class DemoActivity : AppCompatActivity() {
         val titles = resources.getStringArray(R.array.countries)
         val colors = resources.obtainTypedArray(R.array.colors)
         val images = resources.obtainTypedArray(R.array.images)
+        picker.bubbleSize =  3
 
         picker.adapter = object : BubblePickerAdapter {
 
@@ -51,6 +51,7 @@ class DemoActivity : AppCompatActivity() {
             override fun getItem(position: Int): PickerItem {
                 return PickerItem().apply {
                     title = titles[position]
+
                     gradient = BubbleGradient(colors.getColor((position * 2) % 8, 0),
                             colors.getColor((position * 2) % 8 + 1, 0), BubbleGradient.VERTICAL)
                     typeface = mediumTypeface
@@ -63,7 +64,6 @@ class DemoActivity : AppCompatActivity() {
         colors.recycle()
         images.recycle()
 
-        picker.bubbleSize =  6
         picker.listener = object : BubblePickerListener {
             override fun onBubbleSelected(item: PickerItem) {
                 //toast("${item.title} selected")

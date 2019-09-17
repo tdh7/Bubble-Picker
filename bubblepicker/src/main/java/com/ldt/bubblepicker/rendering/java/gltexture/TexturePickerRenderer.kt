@@ -1,18 +1,18 @@
-package com.igalata.bubblepicker.rendering
+package com.ldt.bubblepicker.rendering.java.gltexture
 
 import android.opengl.GLES20
 import android.opengl.GLES20.*
-import android.opengl.GLSurfaceView
 import android.view.View
-import com.igalata.bubblepicker.*
-import com.igalata.bubblepicker.model.Color
-import com.igalata.bubblepicker.model.PickerItem
-import com.igalata.bubblepicker.physics.Engine
-import com.igalata.bubblepicker.rendering.BubbleShader.A_POSITION
-import com.igalata.bubblepicker.rendering.BubbleShader.A_UV
-import com.igalata.bubblepicker.rendering.BubbleShader.U_BACKGROUND
-import com.igalata.bubblepicker.rendering.BubbleShader.fragmentShader
-import com.igalata.bubblepicker.rendering.BubbleShader.vertexShader
+import com.ldt.bubblepicker.*
+import com.ldt.bubblepicker.model.Color
+import com.ldt.bubblepicker.model.PickerItem
+import com.ldt.bubblepicker.physics.Engine
+import com.ldt.bubblepicker.rendering.BubbleShader.A_POSITION
+import com.ldt.bubblepicker.rendering.BubbleShader.A_UV
+import com.ldt.bubblepicker.rendering.BubbleShader.U_BACKGROUND
+import com.ldt.bubblepicker.rendering.BubbleShader.fragmentShader
+import com.ldt.bubblepicker.rendering.BubbleShader.vertexShader
+import com.ldt.bubblepicker.rendering.Item
 import org.jbox2d.common.Vec2
 import java.nio.FloatBuffer
 import java.util.*
@@ -22,16 +22,20 @@ import javax.microedition.khronos.opengles.GL10
 /**
  * Created by irinagalata on 1/19/17.
  */
-class PickerRenderer(val glView: View) : GLSurfaceView.Renderer {
+class TexturePickerRenderer(val glView: View) : GLTextureView.Renderer {
+    override fun onSurfaceDestroyed(gl: GL10?) {
+    }
 
     var backgroundColor: Color? = null
     var maxSelectedCount: Int? = null
         set(value) {
             Engine.maxSelectedCount = value
+            field = value
         }
     var bubbleSize = 50
         set(value) {
             Engine.radius = value
+            field = value
         }
     var listener: BubblePickerListener? = null
     lateinit var items: ArrayList<PickerItem>
@@ -57,8 +61,8 @@ class PickerRenderer(val glView: View) : GLSurfaceView.Renderer {
     private val circles = ArrayList<Item>()
 
     override fun onSurfaceCreated(gl: GL10?, config: EGLConfig?) {
-        glClearColor(backgroundColor?.red ?: 1f, backgroundColor?.green ?: 1f,
-                backgroundColor?.blue ?: 1f, backgroundColor?.alpha ?: 1f)
+       // glClearColor(backgroundColor?.red ?: 1f, backgroundColor?.green ?: 1f,
+          //      backgroundColor?.blue ?: 1f, backgroundColor?.alpha ?: 0f)
         enableTransparency()
     }
 
@@ -129,18 +133,17 @@ class PickerRenderer(val glView: View) : GLSurfaceView.Renderer {
     }
 
     private fun attachShaders() {
-        programId = createProgram(createShader(GL_VERTEX_SHADER, vertexShader),
-                createShader(GL_FRAGMENT_SHADER, fragmentShader))
+        programId = createProgram(createShader(GL_VERTEX_SHADER, vertexShader), createShader(GL_FRAGMENT_SHADER, fragmentShader))
         glUseProgram(programId)
     }
 
-    fun createProgram(vertexShader: Int, fragmentShader: Int) = glCreateProgram().apply {
+    private fun createProgram(vertexShader: Int, fragmentShader: Int) = glCreateProgram().apply {
         glAttachShader(this, vertexShader)
         glAttachShader(this, fragmentShader)
         glLinkProgram(this)
     }
 
-    fun createShader(type: Int, shader: String) = GLES20.glCreateShader(type).apply {
+    private fun createShader(type: Int, shader: String) = GLES20.glCreateShader(type).apply {
         glShaderSource(this, shader)
         glCompileShader(this)
     }

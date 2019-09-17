@@ -1,4 +1,4 @@
-package com.igalata.bubblepicker.rendering
+package com.ldt.bubblepicker.rendering
 
 import android.content.Context
 import android.graphics.PixelFormat
@@ -6,11 +6,11 @@ import android.opengl.GLSurfaceView
 import androidx.annotation.ColorInt
 import android.util.AttributeSet
 import android.view.MotionEvent
-import com.igalata.bubblepicker.BubblePickerListener
-import com.igalata.bubblepicker.R
-import com.igalata.bubblepicker.adapter.BubblePickerAdapter
-import com.igalata.bubblepicker.model.Color
-import com.igalata.bubblepicker.model.PickerItem
+import com.ldt.bubblepicker.BubblePickerListener
+import com.ldt.bubblepicker.R
+import com.ldt.bubblepicker.adapter.BubblePickerAdapter
+import com.ldt.bubblepicker.model.Color
+import com.ldt.bubblepicker.model.PickerItem
 
 /**
  * Created by irinagalata on 1/19/17.

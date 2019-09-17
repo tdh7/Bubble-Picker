@@ -1,6 +1,6 @@
-package com.igalata.bubblepicker
+package com.ldt.bubblepicker
 
-import com.igalata.bubblepicker.model.PickerItem
+import com.ldt.bubblepicker.model.PickerItem
 
 /**
  * Created by irinagalata on 3/6/17.

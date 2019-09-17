@@ -1,7 +1,7 @@
-package com.igalata.bubblepicker.physics
+package com.ldt.bubblepicker.physics
 
-import com.igalata.bubblepicker.rendering.Item
-import com.igalata.bubblepicker.sqr
+import com.ldt.bubblepicker.rendering.Item
+import com.ldt.bubblepicker.sqr
 import org.jbox2d.common.Vec2
 import org.jbox2d.dynamics.World
 import java.util.*

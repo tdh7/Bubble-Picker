@@ -1,4 +1,4 @@
-package com.igalata.bubblepicker.model
+package com.ldt.bubblepicker.model
 
 import android.graphics.Color
 import androidx.annotation.ColorInt

@@ -1,4 +1,4 @@
-package com.igalata.bubblepicker.rendering.java;
+package com.ldt.bubblepicker.rendering.java;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -9,15 +9,13 @@ import android.graphics.PorterDuff;
 import android.graphics.SurfaceTexture;
 import android.util.AttributeSet;
 import android.util.Log;
-import android.view.MotionEvent;
 import android.view.TextureView;
 
-import com.igalata.bubblepicker.R;
-import com.igalata.bubblepicker.adapter.BubblePickerAdapter;
-import com.igalata.bubblepicker.model.PickerItem;
+import com.ldt.bubblepicker.R;
+import com.ldt.bubblepicker.adapter.BubblePickerAdapter;
+import com.ldt.bubblepicker.model.PickerItem;
 
 import java.util.ArrayList;
-import java.util.Random;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;

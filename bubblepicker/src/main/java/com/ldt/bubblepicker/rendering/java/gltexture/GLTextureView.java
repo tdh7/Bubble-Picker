@@ -1,4 +1,4 @@
-package com.igalata.bubblepicker.rendering.java.gltexture;
+package com.ldt.bubblepicker.rendering.java.gltexture;
 
 import java.io.Writer;
 import java.lang.ref.WeakReference;

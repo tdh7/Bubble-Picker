@@ -1,4 +1,4 @@
-package com.igalata.bubblepicker.physics
+package com.ldt.bubblepicker.physics
 
 import org.jbox2d.collision.shapes.CircleShape
 import org.jbox2d.common.Vec2

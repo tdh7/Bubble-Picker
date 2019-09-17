@@ -1,4 +1,4 @@
-package com.igalata.bubblepicker.model
+package com.ldt.bubblepicker.model
 
 import android.graphics.Typeface
 import android.graphics.drawable.Drawable
