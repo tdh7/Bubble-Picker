@@ -17,8 +17,8 @@ object Engine {
     var radius = 50
         set(value) {
             field = value
-            bubbleRadius = interpolate(0.1f, 0.25f, value / 100f)
-            gravity = interpolate(20f, 80f, value / 100f)
+            bubbleRadius = interpolate(0.01f, 0.5f, value / 100f)
+            gravity = interpolate(1f, 40f, value / 100f)
             standardIncreasedGravity = interpolate(500f, 800f, value / 100f)
         }
     var centerImmediately = false
@@ -45,10 +45,13 @@ object Engine {
 
     fun build(bodiesCount: Int, scaleX: Float, scaleY: Float): List<CircleBody> {
         val density = interpolate(0.8f, 0.2f, radius / 100f)
+        val rnd = Random()
         for (i in 0..bodiesCount - 1) {
-            val x = if (Random().nextBoolean()) -startX else startX
-            val y = if (Random().nextBoolean()) -0.5f / scaleY else 0.5f / scaleY
-            bodies.add(CircleBody(world, Vec2(x, y), bubbleRadius * scaleX, (bubbleRadius * scaleX) * 1.3f, density))
+            val x = if (rnd.nextBoolean()) -startX else startX
+            val y = if (rnd.nextBoolean()) -0.5f / scaleY else 0.5f / scaleY
+            val randomSize =  rnd.nextInt(100)/100f
+            val size = bubbleRadius * interpolate(0.5f,1.5f,randomSize)
+            bodies.add(CircleBody(world, Vec2(x, y), size* scaleX, (size * scaleX) * 1.3f, density))
         }
         this.scaleX = scaleX
         this.scaleY = scaleY

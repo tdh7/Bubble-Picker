@@ -115,7 +115,7 @@ class PickerRenderer(val glView: View) : GLSurfaceView.Renderer {
     }
 
     private fun drawFrame() {
-        glClear(GL_COLOR_BUFFER_BIT)
+       // glClear(GL_COLOR_BUFFER_BIT)
         glUniform4f(glGetUniformLocation(programId, U_BACKGROUND), 1f, 1f, 1f, 0f)
         verticesBuffer?.passToShader(programId, A_POSITION)
         uvBuffer?.passToShader(programId, A_UV)

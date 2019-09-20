@@ -61,8 +61,8 @@ class TexturePickerRenderer(val glView: View) : GLTextureView.Renderer {
     private val circles = ArrayList<Item>()
 
     override fun onSurfaceCreated(gl: GL10?, config: EGLConfig?) {
-       // glClearColor(backgroundColor?.red ?: 1f, backgroundColor?.green ?: 1f,
-          //      backgroundColor?.blue ?: 1f, backgroundColor?.alpha ?: 0f)
+        glClearColor(backgroundColor?.red ?: 1f, backgroundColor?.green ?: 1f,
+                backgroundColor?.blue ?: 1f, backgroundColor?.alpha ?: 0f)
         enableTransparency()
     }
 

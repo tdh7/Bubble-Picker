@@ -45,17 +45,20 @@ class BubblePicker : GLSurfaceView {
     var maxSelectedCount: Int? = null
         set(value) {
             renderer.maxSelectedCount = value
+            field = value
         }
 
     var listener: BubblePickerListener? = null
         set(value) {
             renderer.listener = value
+            field = value
         }
 
     var bubbleSize = 50
         set(value) {
             if (value in 1..100) {
                 renderer.bubbleSize = value
+                field = value
             }
         }
 

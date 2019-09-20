@@ -11,6 +11,7 @@ import android.text.TextPaint
 import com.ldt.bubblepicker.model.BubbleGradient
 import com.ldt.bubblepicker.model.PickerItem
 import com.ldt.bubblepicker.physics.CircleBody
+import com.ldt.bubblepicker.physics.Engine
 import com.ldt.bubblepicker.rendering.BubbleShader.U_MATRIX
 import com.ldt.bubblepicker.toTexture
 import org.jbox2d.common.Vec2
@@ -41,7 +42,24 @@ data class Item(val pickerItem: PickerItem, val circleBody: CircleBody) {
     private var imageTexture: Int = 0
     private val currentTexture: Int
         get() = if (circleBody.increased || circleBody.isIncreasing) imageTexture else texture
-    private val bitmapSize = 256f
+    public companion object {
+        var bitmapSize = 64f
+            set(value) {
+                field = value
+            }
+
+        var textSizeRatio = 40f/256
+        set(value) {
+            field = textSizeRatio
+        }
+
+        var textSize = textSizeRatio * bitmapSize
+            get() {
+               return textSizeRatio * (bitmapSize)
+            }
+    }
+
+
     private val gradient: LinearGradient?
         get() {
             return pickerItem.gradient?.let {
